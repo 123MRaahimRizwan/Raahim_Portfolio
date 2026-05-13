@@ -133,7 +133,7 @@ const About = () => {
               "
             >
               <img
-                src="/Raahim.jpeg"
+                src="/public/images/Raahim.jpeg"
                 alt="Raahim"
                 className="
                   w-70

@@ -1,12 +1,18 @@
 import React from "react";
 import { FaHome, FaGithub, FaLinkedin, FaYoutube } from "react-icons/fa";
 import { GoHomeFill } from "react-icons/go";
+import { GoProjectSymlink } from "react-icons/go";
+
 
 const Navbar = () => {
   const navItems = [
     {
       icon: <GoHomeFill size={20} />,
       link: "/",
+    },
+    {
+      icon: <GoProjectSymlink size={20} />,
+      link: "#projects",
     },
     {
       icon: <FaGithub size={20} />,
@@ -19,7 +25,7 @@ const Navbar = () => {
     {
       icon: <FaYoutube size={20} />,
       link: "https://www.youtube.com/@programmingwithraahim",
-    },
+    }
   ];
 
   return (
@@ -37,7 +43,7 @@ const Navbar = () => {
           <a
             key={index}
             href={item.link}
-            target={item.link !== "/" ? "_blank" : "_self"}
+            target={item.link.startsWith("http") ? "_blank" : "_self"}
             rel="noopener noreferrer"
             className="
               group

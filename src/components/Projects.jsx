@@ -5,24 +5,32 @@ import { ArrowRight } from "lucide-react";
 const Projects = () => {
   const projects = [
     {
-      title: "AI Chat Application",
+      image: "/public/images/aqi.png",
+      title: "Karachi AQI Forecasting System",
       description:
-        "A modern AI-powered chat application with sleek UI and real-time interactions.",
+        "An end-to-end Machine Learning + MLOps pipeline for forecasting Air Quality Index (AQI) in Karachi using automated feature engineering, model training, GitHub Actions CI/CD, MongoDB model registry, and a live Streamlit dashboard.",
+      link: "https://github.com/123MRaahimRizwan/AQI_Prediction_10_Pearls"
     },
     {
-      title: "Spotify Clone",
+      image: "/public/images/threat_analyzer.png",
+      title: "Threat Intelligence System",
       description:
-        "A responsive Spotify-inspired music streaming interface built with React.",
+        "A RAG-based (Retrieval-Augmented Generation) threat intelligence system that detects anomalies in server logs and provides contextualized, prioritized security alerts with LLM-generated mitigation plans, citations, and comprehensive performance metrics.",
+      link: "https://github.com/123MRaahimRizwan/SENTEC-Security-Analyzer"
     },
     {
-      title: "Mario Platformer Game",
+      image: "/public/images/chatbot.png",
+      title: "AI Chatbot for NED University",
       description:
-        "A complete platformer game developed entirely using Python.",
+        "A production-ready Retrieval-Augmented Generation (RAG) chatbot for outsiders to know everything about NED University of Engineering and Technology. It originated as an idea to help intermediate students acquire accurate information about NED University.",
+      link: "https://github.com/123MRaahimRizwan/NED-Chatbot"
     },
     {
-      title: "Version Control System",
+      image: "/public/images/youtube_clone.png",
+      title: "Youtube Clone",
       description:
-        "A Git-inspired version control application using C++ and React.",
+        "This is a YouTube clone application built with ReactJS and Material UI. It uses the free YouTube Data API to retrieve and display video data. The app features a responsive design, allowing users to search for videos, view video details, and watch videos directly within the application.",
+      link: "https://github.com/123MRaahimRizwan/YouTube-Clone"
     },
   ];
 
@@ -33,7 +41,7 @@ const Projects = () => {
     >
       {/* HEADER */}
       <div className="flex flex-col items-center text-center space-y-5">
-        
+
         {/* Small Badge */}
         <div
           className="
@@ -122,13 +130,19 @@ const Projects = () => {
             {/* Card Content */}
             <div className="relative z-10">
               <ProjectCard
+                image={project.image}
                 title={project.title}
                 description={project.description}
+                link={project.link}
               />
 
               {/* Bottom Action */}
+
               <div className="px-6 pb-6 pt-2">
-                <button
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="
                     flex items-center gap-2
                     text-sm font-medium
@@ -138,9 +152,9 @@ const Projects = () => {
                     hover:text-white
                   "
                 >
-                  View Project
+                  View on Github
                   <ArrowRight size={16} />
-                </button>
+                </a>
               </div>
             </div>
           </div>
