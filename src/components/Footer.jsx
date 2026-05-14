@@ -1,13 +1,21 @@
 import React from "react";
+import { motion } from "framer-motion";
+
 import {
   FaHeart,
-  FaArrowUp,
   FaGithub,
   FaLinkedin,
   FaYoutube,
 } from "react-icons/fa";
 
+import {
+  IoArrowUp,
+  IoSparkles,
+} from "react-icons/io5";
+
 const Footer = () => {
+  const currentYear = new Date().getFullYear();
+
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -15,124 +23,352 @@ const Footer = () => {
     });
   };
 
+  const socialLinks = [
+    {
+      icon: <FaGithub size={18} />,
+      href: "https://github.com/123MRaahimRizwan",
+      label: "GitHub",
+    },
+    {
+      icon: <FaLinkedin size={18} />,
+      href: "https://www.linkedin.com/in/muhammad-raahim-rizwan",
+      label: "LinkedIn",
+    },
+    {
+      icon: <FaYoutube size={18} />,
+      href: "https://www.youtube.com/@programmingwithraahim",
+      label: "YouTube",
+    },
+  ];
+
+  const quickLinks = [
+    { label: "Home", href: "#home" },
+    { label: "About", href: "#about" },
+    { label: "Projects", href: "#projects" },
+    { label: "Contact", href: "#contact" },
+  ];
+
   return (
-    <footer className="relative mt-24 px-6 md:px-12 pb-8">
+    <footer
+      className="
+        relative
+        overflow-hidden
+        px-6
+        md:px-12
+        pt-24
+        pb-10
+        bg-[#050816]
+      "
+    >
+      {/* BACKGROUND */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {/* Grid */}
+        <div
+          className="
+            absolute inset-0
+            bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)]
+            bg-[size:50px_50px]
+          "
+        />
 
-      {/* Divider */}
-      <div className="max-w-6xl mx-auto">
-        <div className="h-px w-full bg-white/10 mb-8" />
+        {/* Glow */}
+        <div className="absolute top-[-20%] right-[-10%] w-[400px] h-[400px] rounded-full bg-blue-500/10 blur-3xl" />
 
-        {/* Main Footer */}
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="absolute bottom-[-20%] left-[-10%] w-[400px] h-[400px] rounded-full bg-cyan-500/10 blur-3xl" />
 
-          {/* Left Side */}
-          <div className="flex flex-col gap-2 text-center md:text-left">
-            <h2 className="text-white font-semibold text-lg">
-              Muhammad Raahim Rizwan
-            </h2>
+        {/* Noise */}
+        <div className="absolute inset-0 opacity-[0.03] bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
+      </div>
 
-            <p className="text-gray-400 text-sm flex items-center gap-1 justify-center md:justify-start">
+      <div className="relative z-10 max-w-7xl mx-auto">
+        {/* TOP DIVIDER */}
+        <motion.div
+          initial={{ scaleX: 0 }}
+          whileInView={{ scaleX: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1 }}
+          className="
+            h-px
+            w-full
+            origin-left
+            bg-gradient-to-r
+            from-transparent
+            via-cyan-400/30
+            to-transparent
+            mb-20
+          "
+        />
+
+        {/* MAIN CONTENT */}
+        <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr_0.8fr] gap-14">
+          {/* LEFT SIDE */}
+          <motion.div
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="space-y-6"
+          >
+            {/* Badge */}
+            <div
+              className="
+                inline-flex
+                items-center
+                gap-2
+                px-4 py-2
+                rounded-full
+                border border-cyan-400/20
+                bg-cyan-400/10
+                text-cyan-300
+                text-sm
+                backdrop-blur-xl
+              "
+            >
+              <IoSparkles size={15} />
+              Portfolio & Personal Brand
+            </div>
+
+            {/* Name */}
+            <div>
+              <h2
+                className="
+                  text-3xl
+                  md:text-4xl
+                  font-black
+                  tracking-tight
+                  text-white
+                  leading-tight
+                "
+              >
+                Muhammad
+                <br />
+                <span className="bg-gradient-to-r from-cyan-300 via-blue-400 to-indigo-400 bg-clip-text text-transparent">
+                  Raahim Rizwan
+                </span>
+              </h2>
+            </div>
+
+            {/* Description */}
+            <p
+              className="
+                max-w-md
+                text-gray-400
+                leading-relaxed
+                text-base
+              "
+            >
+              AI Engineering enthusiast focused on building
+              intelligent systems, immersive digital experiences,
+              and scalable modern applications with thoughtful design.
+            </p>
+
+            {/* Built With */}
+            <div
+              className="
+                inline-flex
+                items-center
+                gap-2
+                px-4 py-3
+                rounded-2xl
+                border border-white/10
+                bg-white/[0.04]
+                text-gray-400
+                text-sm
+              "
+            >
               Built with
+
               <FaHeart
                 size={14}
-                className="text-red-400 fill-red-400"
+                className="text-red-400 fill-red-400 animate-pulse"
               />
-              using React & Tailwind CSS
+
+              using React, Framer Motion & Tailwind CSS
+            </div>
+          </motion.div>
+
+          {/* QUICK LINKS */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="space-y-6"
+          >
+            <h3
+              className="
+                text-sm
+                uppercase
+                tracking-[0.25em]
+                text-gray-500
+              "
+            >
+              Navigation
+            </h3>
+
+            <div className="flex flex-col gap-4">
+              {quickLinks.map((link, idx) => (
+                <motion.a
+                  key={idx}
+                  href={link.href}
+                  whileHover={{
+                    x: 6,
+                  }}
+                  className="
+                    group
+                    flex
+                    items-center
+                    gap-3
+                    text-gray-400
+                    hover:text-white
+                    transition-all duration-300
+                    w-fit
+                  "
+                >
+                  <span className="text-cyan-400 opacity-0 group-hover:opacity-100 transition-opacity">
+                    →
+                  </span>
+
+                  <span className="text-base">
+                    {link.label}
+                  </span>
+                </motion.a>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* SOCIALS */}
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="space-y-6"
+          >
+            <h3
+              className="
+                text-sm
+                uppercase
+                tracking-[0.25em]
+                text-gray-500
+              "
+            >
+              Connect
+            </h3>
+
+            <div className="flex gap-4">
+              {socialLinks.map((social, idx) => (
+                <motion.a
+                  key={idx}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{
+                    scale: 1.08,
+                    y: -5,
+                  }}
+                  whileTap={{
+                    scale: 0.95,
+                  }}
+                  className="
+                    group
+                    relative
+                    overflow-hidden
+                    flex
+                    items-center
+                    justify-center
+                    w-14 h-14
+                    rounded-2xl
+                    border border-white/10
+                    bg-white/[0.05]
+                    text-gray-300
+                    transition-all duration-300
+                    hover:border-cyan-400/30
+                    hover:text-white
+                  "
+                  title={social.label}
+                >
+                  {/* Glow */}
+                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-br from-cyan-400/10 to-blue-500/10" />
+
+                  <div className="relative z-10">
+                    {social.icon}
+                  </div>
+                </motion.a>
+              ))}
+            </div>
+
+            <p className="text-gray-500 text-sm leading-relaxed max-w-xs">
+              Open to collaborations, freelance projects,
+              AI engineering opportunities, and creative tech discussions.
             </p>
-          </div>
+          </motion.div>
+        </div>
 
-          {/* Social Links */}
-          <div className="flex items-center gap-3">
+        {/* BOTTOM SECTION */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.2, duration: 0.8 }}
+          className="
+            mt-20
+            pt-8
+            border-t border-white/10
+            flex
+            flex-col
+            md:flex-row
+            items-center
+            justify-between
+            gap-6
+          "
+        >
+          {/* Copyright */}
+          <p className="text-gray-500 text-sm text-center md:text-left">
+            © {currentYear} Muhammad Raahim Rizwan.
+            Crafted with precision and creativity.
+          </p>
 
-            <a
-              href="https://github.com/123MRaahimRizwan"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="
-                group
-                p-3
-                rounded-full
-                border border-white/10
-                bg-white/5
-                text-gray-300
-                transition-all duration-300
-                hover:text-white
-                hover:bg-white/10
-                hover:scale-110
-              "
-            >
-              <FaGithub size={18} />
-            </a>
-
-            <a
-              href="https://www.linkedin.com/in/muhammad-raahim-rizwan"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="
-                group
-                p-3
-                rounded-full
-                border border-white/10
-                bg-white/5
-                text-gray-300
-                transition-all duration-300
-                hover:text-white
-                hover:bg-white/10
-                hover:scale-110
-              "
-            >
-              <FaLinkedin size={18} />
-            </a>
-
-            <a
-              href="https://www.youtube.com/@programmingwithraahim"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="
-                group
-                p-3
-                rounded-full
-                border border-white/10
-                bg-white/5
-                text-gray-300
-                transition-all duration-300
-                hover:text-white
-                hover:bg-white/10
-                hover:scale-110
-              "
-            >
-              <FaYoutube size={18} />
-            </a>
-          </div>
-
-          {/* Right Side */}
-          <button
+          {/* Back To Top */}
+          <motion.button
             onClick={scrollToTop}
+            whileHover={{
+              scale: 1.05,
+              y: -2,
+            }}
+            whileTap={{
+              scale: 0.95,
+            }}
             className="
-              flex items-center gap-2
-              rounded-full
-              border border-white/10
-              bg-white/5
+              group
+              relative
+              overflow-hidden
+              flex
+              items-center
+              gap-3
               px-5 py-3
-              text-sm text-gray-300
+              rounded-2xl
+              border border-white/10
+              bg-white/[0.05]
+              text-gray-300
               transition-all duration-300
-              hover:bg-white/10
+              hover:border-cyan-400/30
               hover:text-white
-              hover:scale-105
             "
           >
-            Back to Top
-            <FaArrowUp size={16} />
-          </button>
-        </div>
+            {/* Glow */}
+            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity bg-gradient-to-r from-cyan-400/10 to-blue-500/10" />
 
-        {/* Bottom Text */}
-        <div className="mt-8 text-center">
-          <p className="text-sm text-gray-500">
-            © {new Date().getFullYear()} Muhammad Raahim Rizwan.
-            All rights reserved.
-          </p>
-        </div>
+            <span className="relative z-10">
+              Back to Top
+            </span>
+
+            <IoArrowUp
+              size={18}
+              className="relative z-10 transition-transform group-hover:-translate-y-1"
+            />
+          </motion.button>
+        </motion.div>
       </div>
     </footer>
   );

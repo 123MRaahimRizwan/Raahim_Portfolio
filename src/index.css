@@ -3,3 +3,174 @@
 html {
   scroll-behavior: smooth;
 }
+
+body {
+  background: #000000;
+  color: #ffffff;
+  overflow-x: hidden;
+}
+
+/* Smooth scrolling for all browsers */
+* {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(59, 130, 246, 0.5);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(59, 130, 246, 0.7);
+}
+
+/* Firefox scrollbar */
+* {
+  scrollbar-color: rgba(59, 130, 246, 0.5) rgba(255, 255, 255, 0.05);
+  scrollbar-width: thin;
+}
+
+/* Glassmorphism support */
+@supports (backdrop-filter: blur(1px)) {
+  .backdrop-blur-xl {
+    backdrop-filter: blur(20px);
+  }
+}
+
+/* Smooth gradients */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% center;
+  }
+  50% {
+    background-position: 100% center;
+  }
+  100% {
+    background-position: 0% center;
+  }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradientShift 3s ease infinite;
+}
+
+/* Floating animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Glow animation */
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(59, 130, 246, 0.8);
+  }
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite;
+}
+
+/* Pulse animation enhanced */
+@keyframes enhanced-pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+.animate-pulse-soft {
+  animation: enhanced-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Entrance animations */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-in-up {
+  animation: slideInUp 0.6s ease-out;
+}
+
+/* Text gradient animation */
+.text-gradient-animate {
+  background: linear-gradient(
+    90deg,
+    #60a5fa,
+    #06b6d4,
+    #60a5fa
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 3s linear infinite;
+}
+
+/* Selection styling */
+::selection {
+  background-color: rgba(59, 130, 246, 0.5);
+  color: white;
+}
+
+::-moz-selection {
+  background-color: rgba(59, 130, 246, 0.5);
+  color: white;
+}
+
+/* Input focus styles */
+input:focus,
+textarea:focus {
+  outline: none;
+}
+
+/* Button transitions */
+button {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Link styles */
+a {
+  transition: all 0.3s ease;
+}
+
+/* Loading animation */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin 3s linear infinite;
+}
