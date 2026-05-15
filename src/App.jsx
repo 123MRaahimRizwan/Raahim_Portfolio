@@ -11,7 +11,6 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import ScrollProgressBar from "./components/ScrollProgressBar";
 import AudioToggle from "./components/AudioToggle";
-import ThemeToggle from "./components/ThemeToggle";
 import BackToTopButton from "./components/BackToTopButton";
 import CursorGlow from "./components/CursorGlow";
 
@@ -31,7 +30,6 @@ function App() {
         <>
           <ScrollProgressBar />
           <Navbar />
-          <ThemeToggle />
           <AudioToggle />
           <BackToTopButton />
 

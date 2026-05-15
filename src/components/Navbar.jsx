@@ -161,13 +161,13 @@ const Navbar = () => {
           py-3
           rounded-full
           border
-          bg-white/[0.04]
+          bg-white/4
           backdrop-blur-2xl
           shadow-[0_8px_40px_rgba(0,0,0,0.25)]
         "
       >
         {/* Glow Background */}
-        <div className="absolute inset-0 bg-gradient-to-r from-cyan-400/[0.03] via-blue-500/[0.03] to-indigo-500/[0.03]" />
+        <div className="absolute inset-0 bg-linear-to-r from-cyan-400/3 via-blue-500/3 to-indigo-500/3" />
 
         {/* Floating Blur */}
         <motion.div
@@ -245,7 +245,7 @@ const Navbar = () => {
                       absolute
                       inset-0
                       rounded-full
-                      bg-gradient-to-r
+                      bg-linear-to-r
                       from-cyan-400
                       to-blue-500
                       shadow-[0_0_25px_rgba(34,211,238,0.35)]
@@ -271,7 +271,7 @@ const Navbar = () => {
                   ${
                     isActive
                       ? "text-white"
-                      : "text-gray-300 hover:text-white hover:bg-white/[0.06]"
+                      : "text-gray-300 hover:text-white hover:bg-white/6"
                   }
                 `}
               >

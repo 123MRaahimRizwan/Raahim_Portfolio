@@ -107,8 +107,8 @@ const Contact = () => {
         <div
           className="
             absolute inset-0
-            bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)]
-            bg-[size:50px_50px]
+            bg-[linear-linear(rgba(255,255,255,0.03)_1px,transparent_1px),linear-linear(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)]
+            bg-size[50px_50px]
           "
         />
 
@@ -127,8 +127,8 @@ const Contact = () => {
             absolute
             top-[-10%]
             right-[-10%]
-            w-[420px]
-            h-[420px]
+            w-105
+            h-105
             rounded-full
             bg-blue-500/10
             blur-3xl
@@ -149,8 +149,8 @@ const Contact = () => {
             absolute
             bottom-[-10%]
             left-[-10%]
-            w-[420px]
-            h-[420px]
+            w-105
+            h-105
             rounded-full
             bg-cyan-500/10
             blur-3xl
@@ -158,7 +158,7 @@ const Contact = () => {
         />
 
         {/* Noise */}
-        <div className="absolute inset-0 opacity-[0.03] bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
+        {/* <div className="absolute inset-0 opacity-[0.03] bg-[url('https://grainy-linears.vercel.app/noise.svg')]" /> */}
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto">
@@ -205,7 +205,7 @@ const Contact = () => {
             Let's Build
             <br />
             Something{" "}
-            <span className="bg-gradient-to-r from-cyan-300 via-blue-400 to-indigo-400 bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-cyan-300 via-blue-400 to-indigo-400 bg-clip-text text-transparent">
               Extraordinary
             </span>
           </h1>
@@ -222,7 +222,7 @@ const Contact = () => {
             "
           >
             Whether you have a project idea, collaboration opportunity,
-            freelance work, or simply want to connect — I’m always open
+            freelance work, or simply want to connect — I'm always open
             to meaningful conversations and innovative ideas.
           </p>
         </motion.div>
@@ -238,16 +238,16 @@ const Contact = () => {
             className="
               relative
               overflow-hidden
-              rounded-[32px]
+              rounded-4xl
               border border-white/10
-              bg-white/[0.05]
+              bg-white/5
               backdrop-blur-2xl
               p-8 md:p-10
               shadow-[0_0_60px_rgba(59,130,246,0.08)]
             "
           >
             {/* Shine */}
-            <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-transparent pointer-events-none" />
+            <div className="absolute inset-0 bg-linear-to-br from-white/10 via-transparent to-transparent pointer-events-none" />
 
             <div className="relative z-10">
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
@@ -285,10 +285,10 @@ const Contact = () => {
                       p-5
                       rounded-2xl
                       border border-white/10
-                      bg-white/[0.04]
+                      bg-white/4
                       transition-all duration-500
                       hover:border-cyan-400/30
-                      hover:bg-white/[0.06]
+                      hover:bg-white/6
                     "
                   >
                     <div
@@ -296,7 +296,7 @@ const Contact = () => {
                         flex items-center justify-center
                         w-14 h-14
                         rounded-2xl
-                        bg-gradient-to-br
+                        bg-linear-to-br
                         ${item.color}
                         text-cyan-300
                       `}
@@ -355,14 +355,14 @@ const Contact = () => {
                         w-14 h-14
                         rounded-2xl
                         border border-white/10
-                        bg-white/[0.05]
+                        bg-white/5
                         text-gray-300
                         transition-all duration-300
                         hover:border-cyan-400/30
                         hover:text-white
                       "
                     >
-                      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity bg-gradient-to-br from-cyan-400/10 to-blue-500/10" />
+                      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity bg-linear-to-br from-cyan-400/10 to-blue-500/10" />
 
                       <div className="relative z-10">
                         {social.icon}
@@ -384,16 +384,16 @@ const Contact = () => {
             className="
               relative
               overflow-hidden
-              rounded-[32px]
+              rounded-4xl
               border border-white/10
-              bg-white/[0.05]
+              bg-white/5
               backdrop-blur-2xl
               p-8 md:p-10
               shadow-[0_0_60px_rgba(59,130,246,0.08)]
             "
           >
             {/* Shine */}
-            <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-transparent pointer-events-none" />
+            <div className="absolute inset-0 bg-linear-to-br from-white/10 via-transparent to-transparent pointer-events-none" />
 
             <div className="relative z-10 space-y-7">
               {/* Name */}
@@ -524,7 +524,7 @@ const Contact = () => {
                   overflow-hidden
                   w-full
                   rounded-2xl
-                  bg-gradient-to-r
+                  bg-linear-to-r
                   from-cyan-400
                   via-blue-500
                   to-indigo-500

@@ -66,7 +66,7 @@ const AudioToggle = () => {
           rounded-2xl
 
           border border-white/10
-          bg-white/[0.05]
+          bg-white/5
           backdrop-blur-2xl
 
           shadow-[0_8px_40px_rgba(0,0,0,0.25)]
@@ -75,7 +75,7 @@ const AudioToggle = () => {
           duration-500
 
           hover:border-cyan-400/30
-          hover:bg-white/[0.08]
+          hover:bg-white/8
           hover:shadow-[0_0_30px_rgba(34,211,238,0.15)]
         "
       >
@@ -89,7 +89,7 @@ const AudioToggle = () => {
             transition-opacity
             duration-500
 
-            bg-gradient-to-br
+            bg-linear-to-br
             from-cyan-400/10
             via-blue-500/5
             to-indigo-500/10

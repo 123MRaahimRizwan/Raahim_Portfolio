@@ -40,8 +40,8 @@ const EntryScreen = ({ onEnter }) => {
           <div
             className="
               absolute inset-0
-              bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)]
-              bg-[size:50px_50px]
+              bg-[linear-linear(rgba(255,255,255,0.03)_1px,transparent_1px),linear-linear(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)]
+              bg-size-[50px_50px]
             "
           />
 
@@ -60,8 +60,8 @@ const EntryScreen = ({ onEnter }) => {
               absolute
               top-[-10%]
               right-[-10%]
-              h-[420px]
-              w-[420px]
+              h-105
+              w-105
               rounded-full
               bg-cyan-500/20
               blur-3xl
@@ -82,8 +82,8 @@ const EntryScreen = ({ onEnter }) => {
               absolute
               bottom-[-10%]
               left-[-10%]
-              h-[420px]
-              w-[420px]
+              h-105
+              w-105
               rounded-full
               bg-blue-600/20
               blur-3xl
@@ -91,7 +91,7 @@ const EntryScreen = ({ onEnter }) => {
           />
 
           {/* Noise Overlay */}
-          <div className="absolute inset-0 opacity-[0.03] mix-blend-soft-light bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
+          {/* <div className="absolute inset-0 opacity-[0.03] mix-blend-soft-light bg-[url('https://grainy-linears.vercel.app/noise.svg')]" /> */}
         </div>
 
         {/* MAIN CARD */}
@@ -113,9 +113,9 @@ const EntryScreen = ({ onEnter }) => {
             className="
               relative
               overflow-hidden
-              rounded-[32px]
+              rounded-4xl
               border border-white/10
-              bg-white/[0.06]
+              bg-white/6
               backdrop-blur-2xl
               shadow-[0_0_60px_rgba(59,130,246,0.15)]
               p-10 md:p-14
@@ -126,7 +126,7 @@ const EntryScreen = ({ onEnter }) => {
               className="
                 absolute
                 inset-0
-                bg-gradient-to-br
+                bg-linear-to-br
                 from-white/10
                 via-transparent
                 to-transparent
@@ -251,7 +251,7 @@ const EntryScreen = ({ onEnter }) => {
                   w-full
                   overflow-hidden
                   rounded-2xl
-                  bg-gradient-to-r
+                  bg-linear-to-r
                   from-cyan-400
                   via-blue-500
                   to-indigo-500
@@ -339,11 +339,12 @@ const EntryScreen = ({ onEnter }) => {
                 animate={{ opacity: 1 }}
                 className="
                   absolute
-                  z-[60]
+                  z-60
                   text-black
-                  text-2xl
+                  text-3xl
                   font-bold
                   tracking-wide
+                  font-sans
                 "
               >
                 Loading Experience...

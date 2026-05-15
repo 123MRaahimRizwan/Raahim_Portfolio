@@ -86,7 +86,7 @@ const Home = () => {
           className="
             absolute inset-0
             bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)]
-            bg-[size:50px_50px]
+            bg-size-[50px_50px]
           "
         />
 
@@ -105,8 +105,8 @@ const Home = () => {
             absolute
             top-[-10%]
             right-[-10%]
-            w-[450px]
-            h-[450px]
+            w-112.5
+            h-112.5
             rounded-full
             bg-blue-500/10
             blur-3xl
@@ -127,8 +127,8 @@ const Home = () => {
             absolute
             bottom-[-10%]
             left-[-10%]
-            w-[450px]
-            h-[450px]
+            w-112.5
+            h-112.5
             rounded-full
             bg-cyan-500/10
             blur-3xl
@@ -136,7 +136,7 @@ const Home = () => {
         />
 
         {/* Noise */}
-        <div className="absolute inset-0 opacity-[0.03] bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
+        {/* <div className="absolute inset-0 opacity-[0.03] bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" /> */}
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto w-full">
@@ -212,7 +212,7 @@ const Home = () => {
               >
                 Hi I'm
                 <br />
-                <span className="bg-gradient-to-r from-cyan-300 via-blue-400 to-indigo-400 bg-clip-text text-transparent">
+                <span className="bg-linear-to-r from-cyan-300 via-blue-400 to-indigo-400 bg-clip-text text-transparent">
                   Raahim
                 </span>
                 👋
@@ -310,7 +310,7 @@ const Home = () => {
                   gap-3
                   px-8 py-4
                   rounded-2xl
-                  bg-gradient-to-r
+                  bg-linear-to-r
                   from-cyan-400
                   to-blue-500
                   text-white
@@ -340,13 +340,13 @@ const Home = () => {
                   px-8 py-4
                   rounded-2xl
                   border border-white/10
-                  bg-white/[0.05]
+                  bg-white/5
                   backdrop-blur-xl
                   text-white
                   font-semibold
                   transition-all duration-300
                   hover:border-cyan-400/20
-                  hover:bg-white/[0.08]
+                  hover:bg-white/8
                 "
               >
                 View Projects
@@ -397,13 +397,13 @@ const Home = () => {
                         px-5 py-2.5
                         rounded-full
                         border border-white/10
-                        bg-white/[0.05]
+                        bg-white/5
                         backdrop-blur-xl
                         text-gray-300
                         text-sm
                         transition-all duration-300
                         hover:border-cyan-400/20
-                        hover:bg-white/[0.08]
+                        hover:bg-white/8
                       "
                   >
                     {tech}
@@ -427,14 +427,14 @@ const Home = () => {
     flex
     justify-center
     overflow-hidden
-    rounded-[32px]
+    rounded-4xl
     border border-white/10
-    bg-white/[0.05]
+    bg-white/5
     backdrop-blur-2xl
     p-8
     transition-all duration-500
     hover:border-cyan-400/30
-    hover:bg-white/[0.06]
+    hover:bg-white/6
     hover:shadow-[0_10px_40px_rgba(34,211,238,0.08)]
   "
             >
@@ -457,7 +457,7 @@ const Home = () => {
                     className="
             absolute inset-0
             rounded-full
-            bg-gradient-to-r
+            bg-linear-to-r
             from-cyan-400
             via-blue-500
             to-indigo-500
@@ -548,7 +548,7 @@ const Home = () => {
             p-3
             rounded-full
             border border-white/10
-            bg-white/[0.05]
+            bg-white/5
             backdrop-blur-xl
           "
         >

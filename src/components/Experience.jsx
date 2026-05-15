@@ -90,8 +90,8 @@ const Experience = () => {
         <div
           className="
             absolute inset-0
-            bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)]
-            bg-[size:50px_50px]
+            bg-[linear-linear(rgba(255,255,255,0.03)_1px,transparent_1px),linear-linear(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)]
+            bg-size-[50px_50px]
           "
         />
 
@@ -110,8 +110,8 @@ const Experience = () => {
             absolute
             top-[-10%]
             right-[-10%]
-            w-[450px]
-            h-[450px]
+            w-112.5
+            h-112.5
             rounded-full
             bg-cyan-500/10
             blur-3xl
@@ -132,8 +132,8 @@ const Experience = () => {
             absolute
             bottom-[-10%]
             left-[-10%]
-            w-[450px]
-            h-[450px]
+            w-112.5
+            h-112.5
             rounded-full
             bg-blue-500/10
             blur-3xl
@@ -141,7 +141,7 @@ const Experience = () => {
         />
 
         {/* Noise */}
-        <div className="absolute inset-0 opacity-[0.03] bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
+        {/* <div className="absolute inset-0 opacity-[0.03] bg-[url('https://grainy-linears.vercel.app/noise.svg')]" /> */}
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto">
@@ -187,7 +187,7 @@ const Experience = () => {
           >
             My Journey
             <br />&{" "}
-            <span className="bg-gradient-to-r from-cyan-300 via-blue-400 to-indigo-400 bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-cyan-300 via-blue-400 to-indigo-400 bg-clip-text text-transparent">
               Technical Expertise
             </span>
           </h1>
@@ -220,16 +220,16 @@ const Experience = () => {
             className="
               relative
               overflow-hidden
-              rounded-[32px]
+              rounded-4xl
               border border-white/10
-              bg-white/[0.05]
+              bg-white/5
               backdrop-blur-2xl
               p-8 md:p-10
               shadow-[0_0_60px_rgba(59,130,246,0.08)]
             "
           >
             {/* Shine */}
-            <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-transparent pointer-events-none" />
+            <div className="absolute inset-0 bg-linear-to-br from-white/10 via-transparent to-transparent pointer-events-none" />
 
             <div className="relative z-10">
               <h2 className="text-3xl font-bold text-white mb-12">
@@ -238,7 +238,7 @@ const Experience = () => {
 
               <div className="relative">
                 {/* Timeline Line */}
-                <div className="absolute left-[18px] top-2 bottom-2 w-px bg-gradient-to-b from-cyan-400/60 via-blue-500/40 to-transparent" />
+                <div className="absolute left-4.5 top-2 bottom-2 w-px bg-linear-to-b from-cyan-400/60 via-blue-500/40 to-transparent" />
 
                 <div className="space-y-12">
                   {experiences.map((exp, idx) => (
@@ -324,17 +324,17 @@ const Experience = () => {
                   overflow-hidden
                   rounded-[30px]
                   border border-white/10
-                  bg-white/[0.05]
+                  bg-white/5
                   backdrop-blur-2xl
                   p-8
                   transition-all duration-500
                   hover:border-cyan-400/30
-                  hover:bg-white/[0.06]
+                  hover:bg-white/6
                   hover:shadow-[0_10px_40px_rgba(34,211,238,0.08)]
                 "
               >
                 {/* Hover Glow */}
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br from-cyan-400/5 via-transparent to-blue-500/5" />
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-linear-to-br from-cyan-400/5 via-transparent to-blue-500/5" />
 
                 <div className="relative z-10">
                   {/* Top */}
@@ -344,7 +344,7 @@ const Experience = () => {
                         className="
                           p-4
                           rounded-2xl
-                          bg-gradient-to-br
+                          bg-linear-to-br
                           from-cyan-400/20
                           to-blue-500/20
                           text-cyan-300
@@ -367,7 +367,7 @@ const Experience = () => {
                         px-4 py-2
                         rounded-full
                         border border-white/10
-                        bg-white/[0.05]
+                        bg-white/5
                         text-gray-300
                         text-sm
                         w-fit
@@ -452,17 +452,17 @@ const Experience = () => {
                   overflow-hidden
                   rounded-[28px]
                   border border-white/10
-                  bg-white/[0.05]
+                  bg-white/5
                   backdrop-blur-2xl
                   p-7
                   transition-all duration-500
                   hover:border-cyan-400/30
-                  hover:bg-white/[0.06]
+                  hover:bg-white/6
                   hover:shadow-[0_10px_40px_rgba(34,211,238,0.06)]
                 "
               >
                 {/* Hover Glow */}
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity bg-gradient-to-br from-cyan-400/5 to-blue-500/5" />
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity bg-linear-to-br from-cyan-400/5 to-blue-500/5" />
 
                 <div className="relative z-10">
                   {/* Header */}
@@ -472,7 +472,7 @@ const Experience = () => {
                         flex items-center justify-center
                         w-10 h-10
                         rounded-xl
-                        bg-gradient-to-br
+                        bg-linear-to-br
                         from-cyan-400/20
                         to-blue-500/20
                         text-cyan-300
@@ -498,7 +498,7 @@ const Experience = () => {
                           px-4 py-2
                           rounded-full
                           border border-white/10
-                          bg-white/[0.05]
+                          bg-white/5
                           text-gray-300
                           text-sm
                           transition-all duration-300

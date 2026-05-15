@@ -115,8 +115,8 @@ const Projects = () => {
         <div
           className="
             absolute inset-0
-            bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)]
-            bg-[size:50px_50px]
+            bg-[linear-linear(rgba(255,255,255,0.03)_1px,transparent_1px),linear-linear(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)]
+            bg-size-[50px_50px]
           "
         />
 
@@ -135,8 +135,8 @@ const Projects = () => {
             absolute
             top-[-10%]
             right-[-10%]
-            w-[450px]
-            h-[450px]
+            w-112.5
+            h-112.5
             rounded-full
             bg-blue-500/10
             blur-3xl
@@ -157,8 +157,8 @@ const Projects = () => {
             absolute
             bottom-[-10%]
             left-[-10%]
-            w-[450px]
-            h-[450px]
+            w-112.5
+            h-112.5
             rounded-full
             bg-cyan-500/10
             blur-3xl
@@ -166,7 +166,7 @@ const Projects = () => {
         />
 
         {/* Noise */}
-        <div className="absolute inset-0 opacity-[0.03] bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
+        {/* <div className="absolute inset-0 opacity-[0.03] bg-[url('https://grainy-linears.vercel.app/noise.svg')]" /> */}
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto">
@@ -224,7 +224,7 @@ const Projects = () => {
           >
             Shipped
             <br />
-            <span className="bg-gradient-to-r from-cyan-300 via-blue-400 to-indigo-400 bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-cyan-300 via-blue-400 to-indigo-400 bg-clip-text text-transparent">
               Projects
             </span>
           </h1>
@@ -295,7 +295,7 @@ const Projects = () => {
                   filter === cat
                     ? `
                       border-cyan-400/30
-                      bg-gradient-to-r
+                      bg-linear-to-r
                       from-cyan-400
                       to-blue-500
                       text-white
@@ -303,10 +303,10 @@ const Projects = () => {
                     `
                     : `
                       border-white/10
-                      bg-white/[0.05]
+                      bg-white/5
                       text-gray-300
                       hover:border-cyan-400/20
-                      hover:bg-white/[0.08]
+                      hover:bg-white/8
                     `
                 }
               `}
@@ -374,18 +374,18 @@ const Projects = () => {
                   group
                   relative
                   overflow-hidden
-                  rounded-[32px]
+                  rounded-4xl
                   border border-white/10
-                  bg-white/[0.05]
+                  bg-white/5
                   backdrop-blur-2xl
                   transition-all duration-500
                   hover:border-cyan-400/30
-                  hover:bg-white/[0.06]
+                  hover:bg-white/6
                   hover:shadow-[0_10px_40px_rgba(34,211,238,0.08)]
                 "
               >
                 {/* Hover Glow */}
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br from-cyan-400/5 via-transparent to-blue-500/5" />
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-linear-to-br from-cyan-400/5 via-transparent to-blue-500/5" />
 
                 {/* Image */}
                 <div className="relative overflow-hidden">
@@ -394,7 +394,7 @@ const Projects = () => {
                     alt={project.title}
                     className="
                       w-full
-                      h-[260px]
+                      h-65
                       object-cover
                       transition-transform duration-700
                       group-hover:scale-105
@@ -402,7 +402,7 @@ const Projects = () => {
                   />
 
                   {/* Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#050816] via-[#050816]/40 to-transparent" />
+                  <div className="absolute inset-0 bg-linear-to-t from-[#050816] via-[#050816]/40 to-transparent" />
 
                   {/* Category */}
                   <div
@@ -456,11 +456,11 @@ const Projects = () => {
                         flex
                         items-center
                         justify-center
-                        min-w-[48px]
+                        min-w-12
                         h-12
                         rounded-2xl
                         border border-white/10
-                        bg-white/[0.05]
+                        bg-white/5
                         text-gray-300
                         transition-all duration-300
                         hover:border-cyan-400/30

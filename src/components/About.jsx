@@ -67,17 +67,17 @@ const About = () => {
         <div
           className="
             absolute inset-0
-            bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)]
-            bg-[size:50px_50px]
+            bg-[linear-linear(rgba(255,255,255,0.03)_1px,transparent_1px),linear-linear(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)]
+            bg-size-[50px_50px]
           "
         />
 
         {/* Glow */}
-        <div className="absolute top-[-10%] right-[-10%] w-[450px] h-[450px] rounded-full bg-blue-500/10 blur-3xl" />
-        <div className="absolute bottom-[-10%] left-[-10%] w-[450px] h-[450px] rounded-full bg-cyan-500/10 blur-3xl" />
+        <div className="absolute top-[-10%] right-[-10%] w-112.5 h-112.5 rounded-full bg-blue-500/10 blur-3xl" />
+        <div className="absolute bottom-[-10%] left-[-10%] w-112.5 h-112.5 rounded-full bg-cyan-500/10 blur-3xl" />
 
         {/* Noise */}
-        <div className="absolute inset-0 opacity-[0.03] bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
+        {/* <div className="absolute inset-0 opacity-[0.03] bg-[url('https://grainy-linears.vercel.app/noise.svg')]" /> */}
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto">
@@ -123,7 +123,7 @@ const About = () => {
             Engineering Ideas
             <br />
             Into{" "}
-            <span className="bg-gradient-to-r from-cyan-300 via-blue-400 to-indigo-400 bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-cyan-300 via-blue-400 to-indigo-400 bg-clip-text text-transparent">
               Intelligent Experiences
             </span>
           </h1>
@@ -160,16 +160,16 @@ const About = () => {
               className="
                 relative
                 overflow-hidden
-                rounded-[32px]
+                rounded-4xl
                 border border-white/10
-                bg-white/[0.05]
+                bg-white/5
                 backdrop-blur-2xl
                 p-8 md:p-10
                 shadow-[0_0_60px_rgba(59,130,246,0.08)]
               "
             >
               {/* Shine */}
-              <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-transparent pointer-events-none" />
+              <div className="absolute inset-0 bg-linear-to-br from-white/10 via-transparent to-transparent pointer-events-none" />
 
               <div className="relative z-10">
                 <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
@@ -220,7 +220,7 @@ const About = () => {
                     gap-3
                     px-8 py-5
                     rounded-2xl
-                    bg-gradient-to-r
+                    bg-linear-to-r
                     from-cyan-400
                     via-blue-500
                     to-indigo-500
@@ -260,9 +260,9 @@ const About = () => {
                 className="
                   relative
                   overflow-hidden
-                  rounded-[28px]
+                  rounded-4xl
                   border border-white/10
-                  bg-white/[0.05]
+                  bg-white/5
                   backdrop-blur-2xl
                   p-8
                   transition-all duration-500
@@ -270,7 +270,7 @@ const About = () => {
                   hover:shadow-[0_10px_40px_rgba(59,130,246,0.12)]
                 "
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-linear-to-br from-white/5 via-transparent to-transparent" />
 
                 <div className="relative z-10">
                   <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6 mb-6">
@@ -279,7 +279,7 @@ const About = () => {
                         className="
                           p-4
                           rounded-2xl
-                          bg-gradient-to-br
+                          bg-linear-to-br
                           from-blue-500/20
                           to-cyan-400/20
                           text-cyan-300
@@ -349,7 +349,7 @@ const About = () => {
                   overflow-hidden
                   rounded-[28px]
                   border border-white/10
-                  bg-white/[0.05]
+                  bg-white/5
                   backdrop-blur-2xl
                   p-8
                   transition-all duration-500
@@ -359,7 +359,7 @@ const About = () => {
                 "
               >
                 {/* Glow */}
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br from-cyan-400/5 via-transparent to-blue-500/5" />
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-linear-to-br from-cyan-400/5 via-transparent to-blue-500/5" />
 
                 <div className="relative z-10">
                   <div
@@ -368,7 +368,7 @@ const About = () => {
                       inline-flex
                       p-4
                       rounded-2xl
-                      bg-gradient-to-br
+                      bg-linear-to-br
                       from-cyan-400/20
                       to-blue-500/20
                       text-cyan-300

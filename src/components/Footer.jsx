@@ -67,17 +67,17 @@ const Footer = () => {
           className="
             absolute inset-0
             bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)]
-            bg-[size:50px_50px]
+            bg-size-[50px_50px]
           "
         />
 
         {/* Glow */}
-        <div className="absolute top-[-20%] right-[-10%] w-[400px] h-[400px] rounded-full bg-blue-500/10 blur-3xl" />
+        <div className="absolute top-[-20%] right-[-10%] w-100 h-100 rounded-full bg-blue-500/10 blur-3xl" />
 
-        <div className="absolute bottom-[-20%] left-[-10%] w-[400px] h-[400px] rounded-full bg-cyan-500/10 blur-3xl" />
+        <div className="absolute bottom-[-20%] left-[-10%] w-100 h-100 rounded-full bg-cyan-500/10 blur-3xl" />
 
         {/* Noise */}
-        <div className="absolute inset-0 opacity-[0.03] bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
+        {/* <div className="absolute inset-0 opacity-[0.03] bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" /> */}
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto">
@@ -91,7 +91,7 @@ const Footer = () => {
             h-px
             w-full
             origin-left
-            bg-gradient-to-r
+            bg-linear-to-r
             from-transparent
             via-cyan-400/30
             to-transparent
@@ -142,7 +142,7 @@ const Footer = () => {
               >
                 Muhammad
                 <br />
-                <span className="bg-gradient-to-r from-cyan-300 via-blue-400 to-indigo-400 bg-clip-text text-transparent">
+                <span className="bg-linear-to-r from-cyan-300 via-blue-400 to-indigo-400 bg-clip-text text-transparent">
                   Raahim Rizwan
                 </span>
               </h2>
@@ -171,7 +171,7 @@ const Footer = () => {
                 px-4 py-3
                 rounded-2xl
                 border border-white/10
-                bg-white/[0.04]
+                bg-white/4
                 text-gray-400
                 text-sm
               "
@@ -280,7 +280,7 @@ const Footer = () => {
                     w-14 h-14
                     rounded-2xl
                     border border-white/10
-                    bg-white/[0.05]
+                    bg-white/5
                     text-gray-300
                     transition-all duration-300
                     hover:border-cyan-400/30
@@ -289,7 +289,7 @@ const Footer = () => {
                   title={social.label}
                 >
                   {/* Glow */}
-                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-br from-cyan-400/10 to-blue-500/10" />
+                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-linear-to-br from-cyan-400/10 to-blue-500/10" />
 
                   <div className="relative z-10">
                     {social.icon}
@@ -349,7 +349,7 @@ const Footer = () => {
               px-5 py-3
               rounded-2xl
               border border-white/10
-              bg-white/[0.05]
+              bg-white/5
               text-gray-300
               transition-all duration-300
               hover:border-cyan-400/30
@@ -357,7 +357,7 @@ const Footer = () => {
             "
           >
             {/* Glow */}
-            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity bg-gradient-to-r from-cyan-400/10 to-blue-500/10" />
+            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity bg-linear-to-r from-cyan-400/10 to-blue-500/10" />
 
             <span className="relative z-10">
               Back to Top
