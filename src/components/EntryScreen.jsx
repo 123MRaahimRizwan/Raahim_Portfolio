@@ -329,7 +329,7 @@ const EntryScreen = ({ onEnter }) => {
                   absolute
                   inset-0
                   origin-bottom
-                  bg-white
+                  bg-[#050816]
                   z-50
                 "
               />
@@ -340,14 +340,17 @@ const EntryScreen = ({ onEnter }) => {
                 className="
                   absolute
                   z-60
-                  text-black
+                  text-white
                   text-3xl
                   font-bold
                   tracking-wide
                   font-sans
                 "
               >
-                Loading Experience...
+                <i>
+                  <span className='text-purple-500'>Brace yourself...</span>
+                  <span className='text-white'>Hee-hee! Loading...</span>
+                  </i>
               </motion.div>
             </>
           )}
