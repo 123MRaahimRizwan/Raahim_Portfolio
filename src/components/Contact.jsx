@@ -1,16 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
+import emailjs from "@emailjs/browser";
 import { motion, AnimatePresence } from "framer-motion";
-import {
-  FaGithub,
-  FaLinkedin,
-  FaYoutube,
-} from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaYoutube } from "react-icons/fa";
 
-import {
-  IoSend,
-  IoMail,
-  IoSparkles,
-} from "react-icons/io5";
+import { IoSend, IoMail, IoSparkles } from "react-icons/io5";
 
 import { FaMapPin } from "react-icons/fa6";
 
@@ -23,6 +16,7 @@ const Contact = () => {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
+  const formRef = useRef();
 
   const handleChange = (e) => {
     setFormData({
@@ -32,26 +26,43 @@ const Contact = () => {
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    setIsSubmitting(true);
+  setIsSubmitting(true);
 
-    setTimeout(() => {
-      console.log(formData);
+  emailjs
+    .sendForm(
+      import.meta.env.VITE_EMAIL_JS_SERVICE_ID,
+      import.meta.env.VITE_EMAIL_JS_TEMPLATE_ID,
+      formRef.current,
+      import.meta.env.VITE_EMAIL_JS_PUBLIC_KEY
+    )
+    .then(
+      () => {
+        setSubmitStatus("success");
 
-      setSubmitStatus("success");
+        formRef.current.reset();
 
-      setFormData({
-        name: "",
-        email: "",
-        message: "",
-      });
+        setFormData({
+          name: "",
+          email: "",
+          message: "",
+        });
 
-      setTimeout(() => setSubmitStatus(null), 4000);
+        setIsSubmitting(false);
 
-      setIsSubmitting(false);
-    }, 1500);
-  };
+        setTimeout(() => {
+          setSubmitStatus(null);
+        }, 4000);
+      },
+      (error) => {
+        console.error(error);
+
+        setSubmitStatus("error");
+        setIsSubmitting(false);
+      }
+    );
+};
 
   const contactInfo = [
     {
@@ -222,8 +233,8 @@ const Contact = () => {
             "
           >
             Whether you have a project idea, collaboration opportunity,
-            freelance work, or simply want to connect — I'm always open
-            to meaningful conversations and innovative ideas.
+            freelance work, or simply want to connect — I'm always open to
+            meaningful conversations and innovative ideas.
           </p>
         </motion.div>
 
@@ -309,9 +320,7 @@ const Contact = () => {
                         {item.label}
                       </p>
 
-                      <p className="text-white font-medium">
-                        {item.value}
-                      </p>
+                      <p className="text-white font-medium">{item.value}</p>
                     </div>
                   </motion.a>
                 ))}
@@ -364,9 +373,7 @@ const Contact = () => {
                     >
                       <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity bg-linear-to-br from-cyan-400/10 to-blue-500/10" />
 
-                      <div className="relative z-10">
-                        {social.icon}
-                      </div>
+                      <div className="relative z-10">{social.icon}</div>
                     </motion.a>
                   ))}
                 </div>
@@ -376,6 +383,7 @@ const Contact = () => {
 
           {/* RIGHT PANEL - FORM */}
           <motion.form
+            ref={formRef}
             onSubmit={handleSubmit}
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -544,11 +552,7 @@ const Contact = () => {
                   {isSubmitting ? "Sending Message..." : "Send Message"}
 
                   <motion.div
-                    animate={
-                      isSubmitting
-                        ? { x: [0, 4, 0] }
-                        : {}
-                    }
+                    animate={isSubmitting ? { x: [0, 4, 0] } : {}}
                     transition={{
                       duration: 1,
                       repeat: Infinity,

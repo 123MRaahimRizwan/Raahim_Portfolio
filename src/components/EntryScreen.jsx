@@ -296,8 +296,12 @@ const EntryScreen = ({ onEnter }) => {
             >
               <button
                 onClick={() => {
+                  setIsSubmitting(true);
                   startMusic();
-                  onEnter();
+
+                  setTimeout(() => {
+                    onEnter();
+                  }, 1400);
                 }}
                 className="
                   text-sm
