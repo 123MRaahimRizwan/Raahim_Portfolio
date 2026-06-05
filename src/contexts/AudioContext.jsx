@@ -33,7 +33,7 @@ export const AudioProvider = ({ children }) => {
     <AudioContext.Provider value={{ isPlaying, hasEntered, toggleAudio, startMusic }}>
       <audio
         ref={audioRef}
-        src="/music/you_rock_my_world.mp3"
+        src="/music/Chicago.mp3"
         loop
         style={{ display: 'none' }}
       />
