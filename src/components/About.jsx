@@ -232,14 +232,9 @@ const About = () => {
                 >
                   <span className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity" />
 
-                  <Download
-                    size={20}
-                    className="relative z-10"
-                  />
+                  <Download size={20} className="relative z-10" />
 
-                  <span className="relative z-10">
-                    Download Resume
-                  </span>
+                  <span className="relative z-10">Download Resume</span>
 
                   <ArrowRight
                     size={18}
@@ -314,9 +309,7 @@ const About = () => {
                     </div>
                   </div>
 
-                  <p className="text-gray-400 leading-relaxed">
-                    {edu.details}
-                  </p>
+                  <p className="text-gray-400 leading-relaxed">{edu.details}</p>
                 </div>
               </motion.div>
             ))}

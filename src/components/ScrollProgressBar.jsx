@@ -10,8 +10,7 @@ const ScrollProgressBar = () => {
         document.documentElement.scrollHeight -
         document.documentElement.clientHeight;
 
-      const progress =
-        (window.scrollY / totalHeight) * 100;
+      const progress = (window.scrollY / totalHeight) * 100;
 
       setScrollProgress(progress);
     };
@@ -20,8 +19,7 @@ const ScrollProgressBar = () => {
 
     handleScroll();
 
-    return () =>
-      window.removeEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (

@@ -1,13 +1,34 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { useAudio } from '../contexts/AudioContext';
-import { Sparkles, ArrowRight } from 'lucide-react';
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { useAudio } from "../contexts/AudioContext";
+import { Sparkles, ArrowRight } from "lucide-react";
 
 const EntryScreen = ({ onEnter }) => {
-  const [name, setName] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const { startMusic } = useAudio();
+
+  const handleRecruiter = () => {
+    setIsSubmitting(true);
+
+    localStorage.setItem("portfolio-visitor-type", "recruiter");
+
+    setTimeout(() => {
+      onEnter();
+    }, 1400);
+  };
+
+  const handleStudent = () => {
+    setIsSubmitting(true);
+
+    localStorage.setItem("portfiolio-visitor-type", "student");
+
+    startMusic();
+
+    setTimeout(() => {
+      onEnter();
+    }, 1400);
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -16,9 +37,9 @@ const EntryScreen = ({ onEnter }) => {
 
     setIsSubmitting(true);
 
-    localStorage.setItem('portfolio-visitor-name', name);
+    localStorage.setItem("portfolio-visitor-name", name);
 
-    startMusic();
+    // startMusic();
 
     setTimeout(() => {
       onEnter();
@@ -54,7 +75,7 @@ const EntryScreen = ({ onEnter }) => {
             transition={{
               duration: 12,
               repeat: Infinity,
-              ease: 'easeInOut',
+              ease: "easeInOut",
             }}
             className="
               absolute
@@ -76,7 +97,7 @@ const EntryScreen = ({ onEnter }) => {
             transition={{
               duration: 14,
               repeat: Infinity,
-              ease: 'easeInOut',
+              ease: "easeInOut",
             }}
             className="
               absolute
@@ -89,9 +110,6 @@ const EntryScreen = ({ onEnter }) => {
               blur-3xl
             "
           />
-
-          {/* Noise Overlay */}
-          {/* <div className="absolute inset-0 opacity-[0.03] mix-blend-soft-light bg-[url('https://grainy-linears.vercel.app/noise.svg')]" /> */}
         </div>
 
         {/* MAIN CARD */}
@@ -103,10 +121,11 @@ const EntryScreen = ({ onEnter }) => {
             ease: [0.22, 1, 0.36, 1],
           }}
           className="
+          flex h-full flex-col items-center justify-center text-center
             relative
             z-10
             w-[92%]
-            max-w-xl
+            max-w-7xl
           "
         >
           <div
@@ -171,149 +190,227 @@ const EntryScreen = ({ onEnter }) => {
                   tracking-tight
                   leading-none
                   text-white
+                  mb-8
                 "
               >
                 Welcome.
               </h1>
-
-              <p
-                className="
-                  text-gray-300
-                  text-base
-                  md:text-lg
-                  leading-relaxed
-                  max-w-md
-                "
-              >
-                Enter your name to begin an immersive portfolio journey
-                crafted with motion, interaction, and cinematic design.
-              </p>
             </motion.div>
 
-            {/* FORM */}
-            <motion.form
-              onSubmit={handleSubmit}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5 }}
-              className="mt-10 space-y-5"
-            >
-              {/* Input */}
-              <div className="relative">
-                <input
-                  type="text"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  placeholder="Enter your name"
-                  autoFocus
-                  className="
-                    w-full
-                    rounded-2xl
-                    border border-white/10
-                    bg-black/30
-                    px-6 py-5
-                    text-white
-                    placeholder:text-gray-500
-                    outline-none
-                    transition-all
-                    duration-300
-                    focus:border-cyan-400/40
-                    focus:bg-black/40
-                    focus:shadow-[0_0_25px_rgba(34,211,238,0.15)]
-                    text-lg
-                  "
-                />
-
+            <div className="mt-10 flex flex-col gap-6 md:flex-row">
+              {/* Recruiter Button */}
+              <motion.button
+                type="button"
+                onClick={handleRecruiter}
+                whileHover={{
+                  y: -8,
+                  scale: 1.02,
+                  rotateX: 4,
+                }}
+                whileTap={{ scale: 0.98 }}
+                className="
+                flex-1
+                cursor-pointer
+      min-h-85
+    group
+    relative
+    w-full
+    overflow-hidden
+    rounded-4xl
+    border border-white/10
+    bg-linear-to-br
+    from-white/8
+    via-white/3
+    to-transparent
+    p-8
+    text-left
+    backdrop-blur-2xl
+    transition-all
+    duration-500
+    hover:border-cyan-400/50
+    hover:shadow-[0_25px_80px_rgba(34,211,238,0.18)]
+"
+              >
+                {/* Animated Glow */}
                 <div
                   className="
-                    absolute
-                    inset-0
-                    rounded-2xl
-                    pointer-events-none
-                    ring-1 ring-inset ring-white/5
-                  "
+      absolute
+      -right-10
+      -top-10
+      h-40
+      w-40
+      rounded-full
+      bg-cyan-400/20
+      blur-3xl
+      opacity-0
+      transition-all
+      duration-500
+      group-hover:opacity-100
+      group-hover:scale-125
+    "
                 />
-              </div>
 
-              {/* CTA */}
-              <motion.button
-                type="submit"
-                disabled={!name.trim() || isSubmitting}
-                whileHover={{
-                  scale: 1.02,
-                }}
-                whileTap={{
-                  scale: 0.98,
-                }}
-                className="
-                  group
-                  relative
-                  w-full
-                  overflow-hidden
-                  rounded-2xl
-                  bg-linear-to-r
-                  from-cyan-400
-                  via-blue-500
-                  to-indigo-500
-                  px-6 py-5
-                  text-lg
-                  font-semibold
-                  text-white
-                  transition-all
-                  duration-300
-                  disabled:opacity-50
-                  disabled:cursor-not-allowed
-                  shadow-[0_10px_40px_rgba(59,130,246,0.35)]
-                "
-              >
-                <span
+                {/* Top Badge */}
+                <div className="relative mb-6 inline-flex rounded-full border border-cyan-400/20 bg-cyan-400/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.25em] text-cyan-300">
+                  Hiring
+                </div>
+
+                <div className="relative flex items-start justify-between">
+                  <div>
+                    <div className="mb-5 flex h-20 w-20 items-center justify-center rounded-3xl border border-white/10 bg-linear-to-br from-cyan-500/20 to-blue-600/20 text-5xl">
+                      💼
+                    </div>
+
+                    <h2 className="text-3xl font-black tracking-tight text-white">
+                      I'm a Recruiter
+                    </h2>
+
+                    <p className="mt-3 max-w-sm text-base leading-relaxed text-gray-400">
+                      Explore my work, projects and experience in a clean,
+                      distraction-free portfolio experience.
+                    </p>
+                  </div>
+
+                  <motion.div
+                    initial={{ x: 0 }}
+                    whileHover={{ x: 6 }}
+                    className="
+        flex
+        h-14
+        w-14
+        items-center
+        justify-center
+        rounded-full
+        border
+        border-white/10
+        bg-white/5
+        text-2xl
+      "
+                  >
+                    →
+                  </motion.div>
+                </div>
+
+                {/* Bottom Accent */}
+                <div
                   className="
-                    absolute inset-0
-                    bg-white/10
-                    opacity-0
-                    group-hover:opacity-100
-                    transition-opacity
-                  "
+      absolute
+      bottom-0
+      left-0
+      h-1
+      w-0
+      bg-linear-to-r
+      from-cyan-400
+      to-blue-500
+      transition-all
+      duration-500
+      group-hover:w-full
+    "
+                />
+              </motion.button>
+
+              {/* Student Button */}
+              <motion.button
+                type="button"
+                onClick={handleStudent}
+                whileHover={{
+                  y: -8,
+                  scale: 1.02,
+                  rotateX: 4,
+                }}
+                whileTap={{ scale: 0.98 }}
+                className="
+                flex-1
+                cursor-pointer
+      min-h-85
+    group
+    relative
+    w-full
+    overflow-hidden
+    rounded-4xl
+    border border-white/10
+    bg-linear-to-br
+    from-white/8
+    via-white/3
+    to-transparent
+    p-8
+    text-left
+    backdrop-blur-2xl
+    transition-all
+    duration-500
+    hover:border-cyan-400/50
+    hover:shadow-[0_25px_80px_rgba(34,211,238,0.18)]
+"
+              >
+                {/* Animated Glow */}
+                <div
+                  className="
+      absolute
+      -right-10
+      -top-10
+      h-40
+      w-40
+      rounded-full
+      bg-cyan-400/20
+      blur-3xl
+      opacity-0
+      transition-all
+      duration-500
+      group-hover:opacity-100
+      group-hover:scale-125
+    "
                 />
 
-                <span className="relative flex items-center justify-center gap-2">
-                  {isSubmitting ? 'Entering Experience...' : 'Enter Portfolio'}
+                {/* Top Badge */}
+                <div className="relative mb-6 inline-flex rounded-full border border-cyan-400/20 bg-cyan-400/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.25em] text-cyan-300">
+                  Learning
+                </div>
 
-                  <ArrowRight
-                    size={20}
-                    className="transition-transform group-hover:translate-x-1"
-                  />
-                </span>
+                <div className="relative flex items-start justify-between">
+                  <div>
+                    <div className="mb-5 flex h-20 w-20 items-center justify-center rounded-3xl border border-white/10 bg-linear-to-br from-cyan-500/20 to-blue-600/20 text-5xl">
+                      🎓
+                    </div>
+
+                    <h2 className="text-3xl font-black tracking-tight text-white">
+                      I'm a Student
+                    </h2>
+
+                    <p className="mt-3 max-w-sm text-base leading-relaxed text-gray-400">
+                      Experience my portfolio with MJ's sound track
+                    </p>
+                  </div>
+
+                  <motion.div
+                    initial={{ x: 0 }}
+                    whileHover={{ x: 6 }}
+                    className="flex h-14 w-14 items-center justify-center rounded-full border border-white/10 bg-white/5 text-2xl
+      "
+                  >
+                    →
+                  </motion.div>
+                </div>
+
+                {/* Bottom Accent */}
+                <div
+                  className="
+      absolute
+      bottom-0
+      left-0
+      h-1
+      w-0
+      bg-linear-to-r
+      from-cyan-400
+      to-blue-500
+      transition-all
+      duration-500
+      group-hover:w-full
+    "
+                />
               </motion.button>
-            </motion.form>
+            </div>
 
             {/* Footer */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.7 }}
-              className="mt-8 text-center"
-            >
-              <button
-                onClick={() => {
-                  setIsSubmitting(true);
-                  startMusic();
-
-                  setTimeout(() => {
-                    onEnter();
-                  }, 1400);
-                }}
-                className="
-                  text-sm
-                  text-gray-500
-                  hover:text-white
-                  transition-colors
-                  duration-300
-                "
-              >
-                Continue without entering a name
-              </button>
-            </motion.div>
           </div>
         </motion.div>
 
@@ -352,9 +449,9 @@ const EntryScreen = ({ onEnter }) => {
                 "
               >
                 <i>
-                  <span className='text-purple-500'>Brace yourself...</span>
-                  <span className='text-white'>Hee-hee! Loading...</span>
-                  </i>
+                  <span className="text-purple-500">Brace yourself...</span>
+                  <span className="text-white">Hee-hee! Loading...</span>
+                </i>
               </motion.div>
             </>
           )}

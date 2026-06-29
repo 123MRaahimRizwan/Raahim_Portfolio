@@ -1,73 +1,42 @@
-import React, {
-  useEffect,
-  useState,
-} from "react";
+import React, { useEffect, useState } from "react";
 
-import {
-  motion,
-  AnimatePresence,
-} from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
-import {
-  GoHomeFill,
-  GoProjectSymlink,
-} from "react-icons/go";
+import { GoHomeFill, GoProjectSymlink } from "react-icons/go";
 
-import {
-  FaGithub,
-  FaLinkedin,
-  FaYoutube,
-} from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaYoutube } from "react-icons/fa";
 
 import { Sparkles } from "lucide-react";
 
 const Navbar = () => {
-  const [activeSection, setActiveSection] =
-    useState("home");
+  const [activeSection, setActiveSection] = useState("home");
 
-  const [isScrolling, setIsScrolling] =
-    useState(false);
+  const [isScrolling, setIsScrolling] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolling(window.scrollY > 20);
 
-      const sections = [
-        "home",
-        "projects",
-      ];
+      const sections = ["home", "projects"];
 
       sections.forEach((section) => {
-        const el =
-          document.getElementById(section);
+        const el = document.getElementById(section);
 
         if (el) {
-          const top =
-            el.offsetTop - 150;
+          const top = el.offsetTop - 150;
 
-          const bottom =
-            top + el.offsetHeight;
+          const bottom = top + el.offsetHeight;
 
-          if (
-            window.scrollY >= top &&
-            window.scrollY < bottom
-          ) {
+          if (window.scrollY >= top && window.scrollY < bottom) {
             setActiveSection(section);
           }
         }
       });
     };
 
-    window.addEventListener(
-      "scroll",
-      handleScroll
-    );
+    window.addEventListener("scroll", handleScroll);
 
-    return () =>
-      window.removeEventListener(
-        "scroll",
-        handleScroll
-      );
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const navItems = [
@@ -79,9 +48,7 @@ const Navbar = () => {
     },
 
     {
-      icon: (
-        <GoProjectSymlink size={18} />
-      ),
+      icon: <GoProjectSymlink size={18} />,
       label: "Projects",
       link: "#projects",
       section: "projects",
@@ -136,9 +103,7 @@ const Navbar = () => {
     >
       <motion.div
         animate={{
-          backdropFilter: isScrolling
-            ? "blur(24px)"
-            : "blur(18px)",
+          backdropFilter: isScrolling ? "blur(24px)" : "blur(18px)",
 
           backgroundColor: isScrolling
             ? "rgba(255,255,255,0.08)"
@@ -193,23 +158,14 @@ const Navbar = () => {
         />
 
         {navItems.map((item, index) => {
-          const isActive =
-            activeSection === item.section;
+          const isActive = activeSection === item.section;
 
           return (
             <motion.a
               key={index}
               href={item.link}
-              target={
-                item.external
-                  ? "_blank"
-                  : "_self"
-              }
-              rel={
-                item.external
-                  ? "noopener noreferrer"
-                  : ""
-              }
+              target={item.external ? "_blank" : "_self"}
+              rel={item.external ? "noopener noreferrer" : ""}
               whileHover={{
                 y: -2,
                 scale: 1.05,
@@ -275,20 +231,12 @@ const Navbar = () => {
                   }
                 `}
               >
-                <span className="relative z-10">
-                  {item.icon}
-                </span>
+                <span className="relative z-10">{item.icon}</span>
 
                 {/* Active Dot */}
                 {isActive && (
-                  <motion.div
-                    layoutId="active-dot"
-                    className="relative z-10"
-                  >
-                    <Sparkles
-                      size={12}
-                      className="text-white"
-                    />
+                  <motion.div layoutId="active-dot" className="relative z-10">
+                    <Sparkles size={12} className="text-white" />
                   </motion.div>
                 )}
               </div>

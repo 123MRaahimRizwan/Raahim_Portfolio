@@ -2,20 +2,12 @@ import React from "react";
 
 import { motion } from "framer-motion";
 
-import {
-  Volume2,
-  VolumeX,
-  Sparkles,
-} from "lucide-react";
+import { Volume2, VolumeX, Sparkles } from "lucide-react";
 
 import { useAudio } from "../contexts/AudioContext";
 
 const AudioToggle = () => {
-  const {
-    isPlaying,
-    toggleAudio,
-    hasEntered,
-  } = useAudio();
+  const { isPlaying, toggleAudio, hasEntered } = useAudio();
 
   if (!hasEntered) return null;
 
@@ -164,15 +156,9 @@ const AudioToggle = () => {
           className="relative z-10"
         >
           {isPlaying ? (
-            <Volume2
-              size={26}
-              className="text-cyan-300"
-            />
+            <Volume2 size={26} className="text-cyan-300" />
           ) : (
-            <VolumeX
-              size={26}
-              className="text-gray-400"
-            />
+            <VolumeX size={26} className="text-gray-400" />
           )}
         </motion.div>
 
@@ -194,10 +180,7 @@ const AudioToggle = () => {
               z-10
             "
           >
-            <Sparkles
-              size={12}
-              className="text-cyan-300"
-            />
+            <Sparkles size={12} className="text-cyan-300" />
           </motion.div>
         )}
       </motion.button>

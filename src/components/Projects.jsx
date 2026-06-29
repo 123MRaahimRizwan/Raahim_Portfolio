@@ -28,8 +28,7 @@ const Projects = () => {
       description:
         "An end-to-end Machine Learning + MLOps pipeline for forecasting Air Quality Index (AQI) in Karachi using automated feature engineering, model training, GitHub Actions CI/CD, MongoDB model registry, and a live Streamlit dashboard.",
 
-      link:
-        "https://github.com/123MRaahimRizwan/AQI_Prediction_10_Pearls",
+      link: "https://github.com/123MRaahimRizwan/AQI_Prediction_10_Pearls",
     },
 
     {
@@ -44,8 +43,7 @@ const Projects = () => {
       description:
         "A RAG-based threat intelligence system that detects anomalies in server logs and provides contextualized security alerts with LLM-generated mitigation plans and performance analytics.",
 
-      link:
-        "https://github.com/123MRaahimRizwan/SENTEC-Security-Analyzer",
+      link: "https://github.com/123MRaahimRizwan/SENTEC-Security-Analyzer",
     },
 
     {
@@ -60,8 +58,7 @@ const Projects = () => {
       description:
         "A production-ready Retrieval-Augmented Generation chatbot built to help students and outsiders explore everything about NED University with accurate AI-powered responses.",
 
-      link:
-        "https://github.com/123MRaahimRizwan/NED-Chatbot",
+      link: "https://github.com/123MRaahimRizwan/NED-Chatbot",
     },
 
     {
@@ -76,25 +73,16 @@ const Projects = () => {
       description:
         "A fully responsive YouTube clone built with ReactJS and Material UI featuring API-driven video search, playback, dynamic routing, and modern UI interactions.",
 
-      link:
-        "https://github.com/123MRaahimRizwan/YouTube-Clone",
+      link: "https://github.com/123MRaahimRizwan/YouTube-Clone",
     },
   ];
 
-  const categories = [
-    "all",
-    "ML/MLOps",
-    "AI/Security",
-    "AI/RAG",
-    "Web Dev",
-  ];
+  const categories = ["all", "ML/MLOps", "AI/Security", "AI/RAG", "Web Dev"];
 
   const filteredProjects =
     filter === "all"
       ? projects
-      : projects.filter(
-          (project) => project.category === filter
-        );
+      : projects.filter((project) => project.category === filter);
 
   return (
     <section
@@ -239,10 +227,9 @@ const Projects = () => {
               leading-relaxed
             "
           >
-            A curated collection of AI systems,
-            machine learning pipelines, intelligent
-            applications, and immersive web experiences
-            built with scalability and innovation in mind.
+            A curated collection of AI systems, machine learning pipelines,
+            intelligent applications, and immersive web experiences built with
+            scalability and innovation in mind.
           </p>
         </motion.div>
 
@@ -312,9 +299,7 @@ const Projects = () => {
               `}
             >
               <span className="relative z-10">
-                {cat === "all"
-                  ? "All Projects"
-                  : cat}
+                {cat === "all" ? "All Projects" : cat}
               </span>
             </motion.button>
           ))}
@@ -499,9 +484,7 @@ const Projects = () => {
                       transition-colors
                     "
                   >
-                    <span className="font-medium">
-                      View Project
-                    </span>
+                    <span className="font-medium">View Project</span>
 
                     <ArrowUpRight size={16} />
                   </motion.a>

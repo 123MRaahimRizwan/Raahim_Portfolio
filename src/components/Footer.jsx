@@ -1,17 +1,9 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-import {
-  FaHeart,
-  FaGithub,
-  FaLinkedin,
-  FaYoutube,
-} from "react-icons/fa";
+import { FaHeart, FaGithub, FaLinkedin, FaYoutube } from "react-icons/fa";
 
-import {
-  IoArrowUp,
-  IoSparkles,
-} from "react-icons/io5";
+import { IoArrowUp, IoSparkles } from "react-icons/io5";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -157,9 +149,9 @@ const Footer = () => {
                 text-base
               "
             >
-              AI Engineering enthusiast focused on building
-              intelligent systems, immersive digital experiences,
-              and scalable modern applications with thoughtful design.
+              AI Engineering enthusiast focused on building intelligent systems,
+              immersive digital experiences, and scalable modern applications
+              with thoughtful design.
             </p>
 
             {/* Built With */}
@@ -177,12 +169,10 @@ const Footer = () => {
               "
             >
               Built with
-
               <FaHeart
                 size={14}
                 className="text-red-400 fill-red-400 animate-pulse"
               />
-
               using React, Framer Motion & Tailwind CSS
             </div>
           </motion.div>
@@ -229,9 +219,7 @@ const Footer = () => {
                     →
                   </span>
 
-                  <span className="text-base">
-                    {link.label}
-                  </span>
+                  <span className="text-base">{link.label}</span>
                 </motion.a>
               ))}
             </div>
@@ -291,16 +279,14 @@ const Footer = () => {
                   {/* Glow */}
                   <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-linear-to-br from-cyan-400/10 to-blue-500/10" />
 
-                  <div className="relative z-10">
-                    {social.icon}
-                  </div>
+                  <div className="relative z-10">{social.icon}</div>
                 </motion.a>
               ))}
             </div>
 
             <p className="text-gray-500 text-sm leading-relaxed max-w-xs">
-              Open to collaborations, freelance projects,
-              AI engineering opportunities, and creative tech discussions.
+              Open to collaborations, freelance projects, AI engineering
+              opportunities, and creative tech discussions.
             </p>
           </motion.div>
         </div>
@@ -325,8 +311,8 @@ const Footer = () => {
         >
           {/* Copyright */}
           <p className="text-gray-500 text-sm text-center md:text-left">
-            © {currentYear} Muhammad Raahim Rizwan.
-            Crafted with precision and creativity.
+            © {currentYear} Muhammad Raahim Rizwan. Crafted with precision and
+            creativity.
           </p>
 
           {/* Back To Top */}
@@ -359,9 +345,7 @@ const Footer = () => {
             {/* Glow */}
             <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity bg-linear-to-r from-cyan-400/10 to-blue-500/10" />
 
-            <span className="relative z-10">
-              Back to Top
-            </span>
+            <span className="relative z-10">Back to Top</span>
 
             <IoArrowUp
               size={18}

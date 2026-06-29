@@ -441,8 +441,6 @@ const Home = () => {
               {/* Glow */}
               <div className="absolute inset-0 bg-linear-to-br from-cyan-400/5 via-transparent to-blue-500/5" />
 
-
-
               <div className="relative z-10 flex flex-col items-center text-center space-y-6">
                 {/* IMAGE SECTION */}
                 <div className="relative w-44 h-44">

@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronUp } from 'lucide-react';
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ChevronUp } from "lucide-react";
 
 const BackToTopButton = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -16,14 +16,14 @@ const BackToTopButton = () => {
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth',
+      behavior: "smooth",
     });
   };
 
   useEffect(() => {
-    window.addEventListener('scroll', toggleVisibility);
+    window.addEventListener("scroll", toggleVisibility);
     return () => {
-      window.removeEventListener('scroll', toggleVisibility);
+      window.removeEventListener("scroll", toggleVisibility);
     };
   }, []);
 
@@ -60,7 +60,8 @@ const BackToTopButton = () => {
           </motion.div>
 
           {/* Glow effect */}
-          <div className="
+          <div
+            className="
             absolute inset-0
             rounded-full
             bg-blue-500/20
@@ -69,7 +70,8 @@ const BackToTopButton = () => {
             group-hover:opacity-100
             transition-opacity duration-300
             pointer-events-none
-          " />
+          "
+          />
         </motion.button>
       )}
     </AnimatePresence>

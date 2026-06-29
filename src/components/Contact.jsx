@@ -26,43 +26,43 @@ const Contact = () => {
   };
 
   const handleSubmit = (e) => {
-  e.preventDefault();
+    e.preventDefault();
 
-  setIsSubmitting(true);
+    setIsSubmitting(true);
 
-  emailjs
-    .sendForm(
-      import.meta.env.VITE_EMAIL_JS_SERVICE_ID,
-      import.meta.env.VITE_EMAIL_JS_TEMPLATE_ID,
-      formRef.current,
-      import.meta.env.VITE_EMAIL_JS_PUBLIC_KEY
-    )
-    .then(
-      () => {
-        setSubmitStatus("success");
+    emailjs
+      .sendForm(
+        import.meta.env.VITE_EMAIL_JS_SERVICE_ID,
+        import.meta.env.VITE_EMAIL_JS_TEMPLATE_ID,
+        formRef.current,
+        import.meta.env.VITE_EMAIL_JS_PUBLIC_KEY,
+      )
+      .then(
+        () => {
+          setSubmitStatus("success");
 
-        formRef.current.reset();
+          formRef.current.reset();
 
-        setFormData({
-          name: "",
-          email: "",
-          message: "",
-        });
+          setFormData({
+            name: "",
+            email: "",
+            message: "",
+          });
 
-        setIsSubmitting(false);
+          setIsSubmitting(false);
 
-        setTimeout(() => {
-          setSubmitStatus(null);
-        }, 4000);
-      },
-      (error) => {
-        console.error(error);
+          setTimeout(() => {
+            setSubmitStatus(null);
+          }, 4000);
+        },
+        (error) => {
+          console.error(error);
 
-        setSubmitStatus("error");
-        setIsSubmitting(false);
-      }
-    );
-};
+          setSubmitStatus("error");
+          setIsSubmitting(false);
+        },
+      );
+  };
 
   const contactInfo = [
     {

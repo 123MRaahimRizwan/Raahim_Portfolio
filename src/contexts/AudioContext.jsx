@@ -1,4 +1,10 @@
-import React, { createContext, useState, useContext, useRef, useEffect } from 'react';
+import React, {
+  createContext,
+  useState,
+  useContext,
+  useRef,
+  useEffect,
+} from "react";
 
 const AudioContext = createContext();
 
@@ -10,7 +16,7 @@ export const AudioProvider = ({ children }) => {
   const startMusic = () => {
     if (audioRef.current) {
       audioRef.current.play().catch(() => {
-        console.log('Autoplay prevented by browser');
+        console.log("Autoplay prevented by browser");
       });
       setIsPlaying(true);
     }
@@ -19,7 +25,7 @@ export const AudioProvider = ({ children }) => {
 
   const toggleAudio = () => {
     if (!audioRef.current) return;
-    
+
     if (isPlaying) {
       audioRef.current.pause();
       setIsPlaying(false);
@@ -30,12 +36,14 @@ export const AudioProvider = ({ children }) => {
   };
 
   return (
-    <AudioContext.Provider value={{ isPlaying, hasEntered, toggleAudio, startMusic }}>
+    <AudioContext.Provider
+      value={{ isPlaying, hasEntered, toggleAudio, startMusic }}
+    >
       <audio
         ref={audioRef}
         src="/music/Chicago.mp3"
         loop
-        style={{ display: 'none' }}
+        style={{ display: "none" }}
       />
       {children}
     </AudioContext.Provider>
@@ -45,7 +53,7 @@ export const AudioProvider = ({ children }) => {
 export const useAudio = () => {
   const context = useContext(AudioContext);
   if (!context) {
-    throw new Error('useAudio must be used within AudioProvider');
+    throw new Error("useAudio must be used within AudioProvider");
   }
   return context;
 };
