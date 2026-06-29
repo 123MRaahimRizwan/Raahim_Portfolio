@@ -173,7 +173,7 @@ const Footer = () => {
                 size={14}
                 className="text-red-400 fill-red-400 animate-pulse"
               />
-              using React, Framer Motion & Tailwind CSS
+              by Muhammad Raahim Rizwan
             </div>
           </motion.div>
 

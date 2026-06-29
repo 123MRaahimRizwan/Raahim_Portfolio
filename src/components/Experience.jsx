@@ -14,17 +14,41 @@ const Experience = () => {
   const experiences = [
     {
       icon: <BrainCircuit className="w-6 h-6" />,
-      title: "AI Research Enthusiast",
-      company: "NED University (Department of CSIT)",
-      period: "2024 — Present",
+      title: "Data Science Intern",
+      company: "10Pearls Pakistan",
+      period: "Dec 2025 — Mar 2026",
       description:
-        "Exploring machine learning systems, retrieval-augmented generation, and intelligent AI applications with a strong research-driven mindset.",
-      skills: ["TensorFlow", "PyTorch", "RAG", "Data Science"],
+        "Developed an AI-powered Air Quality Index (AQI) prediction system for Karachi, leveraging machine learning models and CI/CD pipelines to enable automated, scalable, and reliable deployment.",
+      skills: [
+        "Streamlit",
+        "Github",
+        "CI/CD",
+        "Data Science",
+        "Machine Learning",
+        "Software Development",
+      ],
+    },
+
+    {
+      icon: <BrainCircuit className="w-6 h-6" />,
+      title: "AI Engineering Intern",
+      company: "NED University (Department of CSIT)",
+      period: "Jul 2025 — Aug 2025",
+      description:
+        "Developed a retrieval-augmented generation (RAG) chatbot for NED University, applying modern AI techniques to enable intelligent, context-aware academic assistance.",
+      skills: [
+        "TensorFlow",
+        "PyTorch",
+        "Chatbots",
+        "RAG",
+        "LLMs",
+        "Software Development",
+      ],
     },
 
     {
       icon: <BookOpen className="w-6 h-6" />,
-      title: "Computer Science Student",
+      title: "Data Science Student",
       company: "NED University (Department of CSIT)",
       period: "2023 — Present",
       description:
