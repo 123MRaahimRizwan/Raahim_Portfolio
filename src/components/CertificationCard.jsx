@@ -103,9 +103,7 @@ const CertificationCard = ({
         </h3>
 
         {/* Description */}
-        <p className="text-gray-400 leading-relaxed mb-8">
-          {description}
-        </p>
+        <p className="text-gray-400 leading-relaxed mb-8">{description}</p>
 
         {/* Button */}
         <motion.a
@@ -124,7 +122,6 @@ const CertificationCard = ({
           "
         >
           View Certificate
-
           <ExternalLink
             size={17}
             className="transition-transform group-hover:translate-x-1"

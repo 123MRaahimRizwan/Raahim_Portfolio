@@ -10,7 +10,8 @@ const certifications = [
     image: "/certificates/google_ai_certificate.jpg",
     description:
       "Comprehensive training in Google's AI ecosystem, including Gemini, Google AI Studio, and practical AI application development.",
-    certificateLink: "https://coursera.org/share/08c0405a1539f93a17e5d3ceac0ae8aa",
+    certificateLink:
+      "https://coursera.org/share/08c0405a1539f93a17e5d3ceac0ae8aa",
   },
   {
     title: "Simplilearn Data Structures and Algorithms",
@@ -55,7 +56,8 @@ const certifications = [
     image: "/certificates/python_for_machine_learning_and_data_science.png",
     description:
       "Comprehensive training in Python for machine learning and data science, covering data preprocessing, model development, evaluation, and practical AI workflows using Python.",
-    certificateLink: "/certificates/Python_for_Data_Science_and_Machine_Learning.pdf",
+    certificateLink:
+      "/certificates/Python_for_Data_Science_and_Machine_Learning.pdf",
   },
 ];
 

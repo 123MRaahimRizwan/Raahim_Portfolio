@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from "react";
 
 const CursorGlow = () => {
   const glowRef = useRef(null);
@@ -6,13 +6,13 @@ const CursorGlow = () => {
   useEffect(() => {
     const handleMouseMove = (e) => {
       if (!glowRef.current) return;
-      
-      glowRef.current.style.left = e.clientX + 'px';
-      glowRef.current.style.top = e.clientY + 'px';
+
+      glowRef.current.style.left = e.clientX + "px";
+      glowRef.current.style.top = e.clientY + "px";
     };
 
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
 
   return (
