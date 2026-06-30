@@ -7,6 +7,7 @@ import Home from "./components/Home";
 import About from "./components/About";
 import Experience from "./components/Experience";
 import Projects from "./components/Projects";
+import Certifications from "./components/Certifications";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import ScrollProgressBar from "./components/ScrollProgressBar";
@@ -37,6 +38,7 @@ function App() {
           <About />
           <Experience />
           <Projects />
+          <Certifications />
           <Contact />
           <Footer />
         </>

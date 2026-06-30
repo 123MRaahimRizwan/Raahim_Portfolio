@@ -139,7 +139,7 @@ const About = () => {
               leading-relaxed
             "
           >
-            I’m an AI engineering enthusiast passionate about creating modern,
+            I'm an AI engineering enthusiast passionate about creating modern,
             scalable, and visually immersive digital products that blend
             intelligent systems with exceptional user experiences.
           </p>
@@ -178,7 +178,7 @@ const About = () => {
 
                 <div className="space-y-6 text-gray-300 leading-relaxed text-lg">
                   <p>
-                    I’m currently pursuing my undergraduate degree in{" "}
+                    I'm currently pursuing my undergraduate degree in{" "}
                     <span className="text-cyan-300 font-semibold">
                       Computer Science & IT
                     </span>{" "}
@@ -198,7 +198,7 @@ const About = () => {
                   </p>
 
                   <p>
-                    Whether it’s engineering machine learning pipelines,
+                    Whether it's engineering machine learning pipelines,
                     architecting backend systems, or designing cinematic
                     front-end experiences, I approach every project with both
                     technical depth and creative precision.

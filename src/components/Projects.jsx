@@ -10,8 +10,6 @@ import {
   Globe,
 } from "lucide-react";
 
-import ProjectCard from "./ProjectCard";
-
 const Projects = () => {
   const [filter, setFilter] = useState("all");
 
