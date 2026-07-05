@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 import { GoHomeFill, GoProjectSymlink } from "react-icons/go";
 
-import { FaGithub, FaLinkedin, FaYoutube } from "react-icons/fa";
+import { FaBlog, FaGithub, FaLinkedin, FaYoutube } from "react-icons/fa";
 
 import { Sparkles } from "lucide-react";
 
@@ -72,6 +72,12 @@ const Navbar = () => {
       icon: <FaYoutube size={18} />,
       label: "YouTube",
       link: "https://www.youtube.com/@programmingwithraahim",
+      external: true,
+    },
+    {
+      icon: <FaBlog size={18} />,
+      label: "Blogs",
+      link: "https://medium.com/@rizwan4601146",
       external: true,
     },
   ];
